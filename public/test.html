@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Widget test</title>
+</head>
+<body>
+  <div id="my-widget"></div>
+
+  <script src="./dist/widget.bundle.js"></script>
+  <script>
+    MyFundraiser.createButton({
+      campaign: 'SaveTheTrees',
+      containerId: 'my-widget'
+    });
+  </script>
+</body>
+</html>
