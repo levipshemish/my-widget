@@ -5,8 +5,11 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'widget.bundle.js',
-    library: 'MyFundraiser',       // Expose as global variable
-    libraryTarget: 'window',       // Attach to window object
+    library: {
+      name: 'MyFundraiser',
+      type: 'umd',
+    },
+    globalObject: 'this',
   },
   module: {
     rules: [

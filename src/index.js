@@ -2,8 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import MyButton from './MyButton';
 
-// Expose globally
-window.MyFundraiser = {
+const MyFundraiser = {
   createButton: ({ campaign, containerId }) => {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -12,3 +11,10 @@ window.MyFundraiser = {
     root.render(<MyButton campaign={campaign} />);
   },
 };
+
+// Expose globally
+if (typeof window !== 'undefined') {
+  window.MyFundraiser = MyFundraiser;
+}
+
+export default MyFundraiser;
