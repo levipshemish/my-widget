@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import MyButton from './MyButton';
 
 // Expose globally
@@ -8,6 +8,7 @@ window.MyFundraiser = {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    ReactDOM.render(<MyButton campaign={campaign} />, container);
+    const root = createRoot(container);
+    root.render(<MyButton campaign={campaign} />);
   },
 };
