@@ -12,9 +12,4 @@ const MyFundraiser = {
   },
 };
 
-// Expose globally
-if (typeof window !== 'undefined') {
-  window.MyFundraiser = MyFundraiser;
-}
-
 export default MyFundraiser;
